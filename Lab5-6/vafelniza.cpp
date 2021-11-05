@@ -48,11 +48,11 @@ int main()
         }
         sum = suma[0]+suma[1]+suma[2]+suma[3];
         sum = sum / float(n);
-        auto end = chrono::high_resolution_clock::now();
 
+        auto end = chrono::high_resolution_clock::now();
         chrono::duration<double> diff = end - start;
         //outfile << n << "          " << diff.count() << endl;
-        cout << diff.count() << endl;
+        cout << sum<<" "<<diff.count() << endl;
         delete [] arr;
     }
     outfile.close();
