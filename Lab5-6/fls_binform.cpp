@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-float x = 1.1/0. - 1.1/0.;
+float x = -0.;
 float y = 2.;
 int num = 9;
 int binx[32];
