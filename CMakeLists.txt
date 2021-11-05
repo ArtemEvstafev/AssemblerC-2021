@@ -3,4 +3,4 @@ project(AssemblerC__2021)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AssemblerC__2021 Lab5-6/vafelniza.cpp)
+add_executable(AssemblerC__2021 Lab5-6/antiperep.cpp)
