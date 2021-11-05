@@ -38,23 +38,23 @@ int main()
 
     for(int i = 0; i < 32; i++)
         std::cout<<binx[i]<<" ";
-    for(int i = 0; i < 32; i++)
-    {
-        asm(
-                //Код работает для int на основе andq
-                "movl y(%rip), %r8d \n"
-                "rcl $1, %r8d \n"
-                "pushf \n"
-                "popq %rax \n"
-                "andq $1, %rax \n"
-                "movl %eax, num(%rip) \n"
-                "movl %r8d, y(%rip) \n"
-                );
-        biny[i] = num;
-    }
-    std::cout<<"\n";
-    for(int i = 0; i < 32; i++)
-        std::cout<<biny[i]<<" ";
+//    for(int i = 0; i < 32; i++)
+//    {
+//        asm(
+//                //Код работает для int на основе andq
+//                "movl y(%rip), %r8d \n"
+//                "rcl $1, %r8d \n"
+//                "pushf \n"
+//                "popq %rax \n"
+//                "andq $1, %rax \n"
+//                "movl %eax, num(%rip) \n"
+//                "movl %r8d, y(%rip) \n"
+//                );
+//        biny[i] = num;
+//    }
+//    std::cout<<"\n";
+//    for(int i = 0; i < 32; i++)
+//        std::cout<<biny[i]<<" ";
     return 0;
 }
 

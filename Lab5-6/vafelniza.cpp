@@ -35,10 +35,10 @@ int main()
 //           sum+=arr[i];
         for(int i=0; i<n/4-1; i+=4)
         {
-            arr[i] = tmp[0];
-            arr[i+1] = tmp[1];
-            arr[i+2] = tmp[2];
-            arr[i+3] = tmp[3];
+            tmp[0] = arr[i];
+            tmp[1] = arr[i+1];
+            tmp[2] = arr[i+2];
+            tmp[3] = arr[i+3];
             asm(
                 "movups tmp, %xmm0 \n"
                 "movups suma, %xmm1 \n"
