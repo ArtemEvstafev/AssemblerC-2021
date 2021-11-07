@@ -44,7 +44,7 @@ int main()
 //            tmp[1] = arr[i+1];
 //            tmp[2] = arr[i+2];
 //            tmp[3] = arr[i+3];
-            tmp = arr+i;
+            //tmp = arr+i;
             asm(
                 "movups tmp(%rip), %xmm0 \n"
                 "movups suma(%rip), %xmm1 \n"
