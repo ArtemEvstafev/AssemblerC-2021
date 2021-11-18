@@ -5,7 +5,7 @@
 #include <chrono>
 using namespace std;
 int N = 16;
-float suma[4] = {0.0};
+float suma[] = {0.0, 0.0, 0.0, 0.0};
 //float tmp[4];
 float* tmp;
 float** tmp1;
@@ -44,9 +44,10 @@ int main()
 //            tmp[1] = arr[i+1];
 //            tmp[2] = arr[i+2];
 //            tmp[3] = arr[i+3];
-            //tmp = arr+i;
+            tmp = arr+i;
             asm(
-                "movups tmp(%rip), %xmm0 \n"
+                "movq tmp(%rip), %rax \n"
+                "movups (%rax), %xmm0 \n"
                 "movups suma(%rip), %xmm1 \n"
                 "addps %xmm0, %xmm1 \n"
                 "movups %xmm1, suma(%rip) \n"
@@ -58,8 +59,8 @@ int main()
 
         chrono::duration<double> diff = end - start;
         //outfile << n << "          " << diff.count() << endl;
-        //cout <<diff.count()<<"\n";
-        cout <<n<<"\t\t"<<sum<<"\t\t"<<diff.count() << endl;
+        cout <<diff.count()<<"\n";
+        //cout <<n<<"\t\t"<<sum<<"\t\t"<<diff.count() << endl;
         delete [] arr;
         sum = 0.;
         suma[0] = 0.;
